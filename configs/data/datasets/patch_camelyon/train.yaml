@@ -1,0 +1,7 @@
+# TODO: Create the configuration for the train dataset.
+#   - Don't forget to include proper transforms - import it
+#   - The path for the images is:
+#       /mnt/data/PatchCamelyon/camelyonpatch_level_2_split_train_x.npy
+#   - The path for the labels is:
+#       /mnt/data/PatchCamelyon/camelyonpatch_level_2_split_train_y.npy
+# In case you have no idea what to write here, have a look at the other configuration files

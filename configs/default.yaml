@@ -1,0 +1,37 @@
+defaults:
+  - hydra: default
+  - logger: mlflow
+  - /data/datasets@data.train: patch_camelyon/train
+  - /data/datasets@data.val: patch_camelyon/val
+  - /data/datasets@data.test: patch_camelyon/test
+  - /model/backbone: ???
+  - _self_
+
+# TODO: Define the top-level parameters for your experiment.
+# You will need to define keys for 'seed', 'mode', and 'checkpoint' where
+#   - `seed`: should be set by the `random_seed` function defined in the `__main__.py`
+#   - `mode`: should be a required argument passed by command line
+#   - `checkpoin`: should be optinoal e.g. have default value None
+
+
+# TODO: Configure the PyTorch Lightning Trainer.
+# Create a 'trainer' section. Refer to the PyTorch Lightning documentation
+# for the 'Trainer' class to find the necessary arguments. You should configure
+# aspects like training duration, logging, and callbacks (e.g., ModelCheckpoint).
+#   - use `ModelCheckpoint` callback
+#   - set the maximum epochs to 20
+
+
+data:
+  batch_size: 512
+  num_workers: 4
+
+# Model configuration is mostly handled by the selected backbone.
+model: {}
+
+# TODO: Fill the metadata for experiment tracking.
+metadata:
+  experiment_name: # TODO: use your name and surname with PC prefix (Path Camelyon)
+  run_name: # TODO: Anything you like
+  description: # TODO: As you like
+  hyperparams: {}
